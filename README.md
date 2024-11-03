@@ -27,13 +27,20 @@ This Python project enables users to explore bikeshare data for three U.S. citie
 - **`bikeshare.py`**: Main Python script for running the bikeshare data analysis.
 - **Data files**: `chicago.csv`, `new_york_city.csv`, `washington.csv` (containing bikeshare trip data for each city).
 
-### How to Run
-1. Ensure the required data files are in the same directory as `bikeshare.py`.
-2. Install dependencies:
+### Installation
+1. Clone this repository and navigate to the project directory:
+    ```bash
+    git clone https://github.com/hossam9909/bikeshare-data-analysis.git
+    cd bikeshare-data-analysis
+    ```
+
+2. Install the required dependencies:
     ```bash
     pip install pandas numpy matplotlib tabulate
-    ```
-3. Run the script:
+
+### How to Run
+1. Ensure the required data files are in the same directory as `bikeshare.py`.
+2. Run the script:
     ```bash
     python bikeshare.py
     ```
