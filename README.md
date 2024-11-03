@@ -45,6 +45,12 @@ This Python project enables users to explore bikeshare data for three U.S. citie
     python bikeshare.py
     ```
 
+### Usage Examples
+- **Example 1**: View data for Chicago in March, on Mondays.
+- **Example 2**: Analyze data for New York City for the month of June, without filtering by a specific day.
+- **Example 3**: Explore data for Washington across all available data without additional filtering.
+
+
 ### Requirements
 - Python 3.6+
 - Required packages: `pandas`, `numpy`, `matplotlib`, `tabulate`
