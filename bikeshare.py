@@ -222,7 +222,27 @@ def trip_duration_stats(df):
 
     print("\nThis took %s seconds." % (time.time() - start_time))
     print('-' * 40)
-    
+
+def rush_hour_analysis(df):
+    print('\nAnalyzing rush hours...\n')
+    start_time = time.time()
+
+    df['Hour'] = df['Start Time'].dt.hour
+    busy_hours = df['Hour'].value_counts().sort_index()
+
+    print("Number of trips by hour:")
+    print(busy_hours)
+
+    plt.figure(figsize=(12, 6))
+    busy_hours.plot(kind='bar')
+    plt.title('Number of Trips by Hour')
+    plt.xlabel('Hour of Day')
+    plt.ylabel('Number of Trips')
+    plt.savefig('trips_by_hour.png')
+    plt.close()
+
+    print("\nThis took %s seconds." % (time.time() - start_time))
+    print('-'*40) 
 
 def plot_gender_distribution(df):
     """
@@ -372,6 +392,7 @@ def main():
         trip_duration_stats(df)
         user_stats(df)
         age_group_stats(df)
+        rush_hour_analysis(df)
 
         restart = input('\nWould you like to restart? Enter yes or no.\n')
         if restart.strip().lower() != 'yes':
