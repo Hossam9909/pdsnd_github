@@ -244,6 +244,29 @@ def rush_hour_analysis(df):
     print("\nThis took %s seconds." % (time.time() - start_time))
     print('-'*40) 
 
+def weekend_weekday_usage(df):
+    print('\nAnalyzing weekend vs weekday usage...\n')
+    start_time = time.time()
+
+    df['Weekday'] = df['Start Time'].dt.dayofweek
+    df['is_weekend'] = df['Weekday'].isin([5, 6])
+
+    weekend_usage = df[df['is_weekend']].shape[0]
+    weekday_usage = df[~df['is_weekend']].shape[0]
+
+    print(f"Weekend usage: {weekend_usage} trips")
+    print(f"Weekday usage: {weekday_usage} trips")
+
+    plt.figure(figsize=(8, 6))
+    plt.bar(['Weekday', 'Weekend'], [weekday_usage, weekend_usage])
+    plt.title('Weekday vs Weekend Usage')
+    plt.ylabel('Number of Trips')
+    plt.savefig('weekday_weekend_usage.png')
+    plt.close()
+
+    print("\nThis took %s seconds." % (time.time() - start_time))
+    print('-'*40)
+
 def plot_gender_distribution(df):
     """
     Plots a pie chart showing the distribution of gender, with handling for missing or incomplete data.
@@ -393,6 +416,7 @@ def main():
         user_stats(df)
         age_group_stats(df)
         rush_hour_analysis(df)
+        weekend_weekday_usage(df)
 
         restart = input('\nWould you like to restart? Enter yes or no.\n')
         if restart.strip().lower() != 'yes':
