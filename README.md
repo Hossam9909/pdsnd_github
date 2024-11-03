@@ -11,10 +11,21 @@ This project analyzes bikeshare data for three major cities in the United States
 Bikeshare Data Analysis
 
 ### Description
-Describe what your project is about and what it does
+This Python project enables users to explore bikeshare data for three U.S. cities by filtering data based on city, month, and day. The program calculates key statistics, including:
+- The most frequent times of travel.
+- The most popular stations and trips.
+- Trip duration details (total and average).
+- User demographics, including age groups and gender distribution.
+- Plots showing distributions of user types, gender, and age groups.
+
+### Features
+- **Filtering Options**: Users can filter by city, specific month, and day of the week.
+- **Data Visualization**: Displays tables and generates plots, such as user type distribution and age group breakdowns.
+- **Error Handling**: Robust handling for missing data or empty datasets.
 
 ### Files used
-Include the files used
+- **`bikeshare.py`**: Main Python script for running the bikeshare data analysis.
+- **Data files**: `chicago.csv`, `new_york_city.csv`, `washington.csv` (containing bikeshare trip data for each city).
 
 ### Credits
 It's important to give proper credit. Add links to any repo that inspired you or blogposts you consulted.
